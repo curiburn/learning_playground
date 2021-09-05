@@ -1,0 +1,9 @@
+jupyter
+pandas
+scipy
+sklearn
+kaggle
+seaborn
+sweetviz
+black
+glances
