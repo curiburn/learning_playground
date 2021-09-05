@@ -1,0 +1,3 @@
+# learning playground
+
+ディレクトリごとに切ってdevcontainerなり建てていろいろやる
