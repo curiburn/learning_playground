@@ -8,3 +8,4 @@ sweetviz
 black
 glances
 nbdime
+tqdm
