@@ -2,3 +2,4 @@ pandas
 sweetviz
 ipywidgets # sweetvizで必要って怒られたけど、前はいらなかったぞ…？
 pandas_profiling
+pandarallel # pandasのapplyとかをマルチプロセスにするアレ
