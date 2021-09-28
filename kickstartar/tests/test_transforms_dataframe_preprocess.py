@@ -2,6 +2,7 @@ import datetime
 import unittest
 import pandas as pd
 from transforms.dataframes.preprocess import dataframe_preprocess
+from tests.utils.constants import UTC
 
 
 class TestPreprocess(unittest.TestCase):
@@ -22,24 +23,8 @@ class TestPreprocess(unittest.TestCase):
         expected = pd.DataFrame(
             {
                 "launched": [
-                    datetime.datetime(
-                        2015,
-                        8,
-                        11,
-                        12,
-                        12,
-                        28,
-                        tzinfo=datetime.timezone(datetime.timedelta(hours=0)),
-                    ),
-                    datetime.datetime(
-                        2012,
-                        7,
-                        11,
-                        11,
-                        13,
-                        28,
-                        tzinfo=datetime.timezone(datetime.timedelta(hours=0)),
-                    ),
+                    datetime.datetime(2015, 8, 11, 12, 12, 28, tzinfo=UTC),
+                    datetime.datetime(2012, 7, 11, 11, 13, 28, tzinfo=UTC),
                 ],
                 "deadline": [
                     datetime.date(2015, 9, 11),

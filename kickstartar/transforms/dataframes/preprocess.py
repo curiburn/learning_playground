@@ -6,8 +6,10 @@
 
 import datetime
 import pandas as pd
+from utils.use_pandaralell import use_pandarallel
 
 
+@use_pandarallel
 def _column_datetime_lauched(df: pd.DataFrame) -> pd.Series:
     """launchedがstringなのでparseする"""
     if "launched" not in df.columns:
@@ -16,11 +18,12 @@ def _column_datetime_lauched(df: pd.DataFrame) -> pd.Series:
     if df.launched.isna().any():
         raise ValueError("`lauched` column has NULL.")
 
-    return df.launched.apply(
+    return df.launched.parallel_apply(
         lambda x: datetime.datetime.strptime(x, "%Y-%m-%dT%H:%M:%S%z")
     ).rename("launched")
 
 
+@use_pandarallel
 def _column_date_deadline(df: pd.DataFrame) -> pd.Series:
     """deadlineがstringなのでparseする"""
     if "deadline" not in df.columns:
@@ -29,7 +32,7 @@ def _column_date_deadline(df: pd.DataFrame) -> pd.Series:
     if df.deadline.isna().any():
         raise ValueError("`deadline` column has NULL.")
 
-    return df.deadline.apply(
+    return df.deadline.parallel_apply(
         lambda x: datetime.datetime.strptime(x, "%Y-%m-%d").date()
     ).rename("deadline")
 
