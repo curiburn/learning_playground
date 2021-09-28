@@ -80,7 +80,7 @@ class TestPreprocess(unittest.TestCase):
                 ignore_index=True,
             ),
             "invalid_deadline__does_not_exist": origin.append(
-                {"launched": "2021-01-01T00:00:00+0000", "deadline": "0000-00-00"},
+                {"launched": "2021-01-01T00:00:00+0000", "deadline": "2021-02-31"},
                 ignore_index=True,
             ),
             "invalid_deadline__null": origin.append(
