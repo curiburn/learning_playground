@@ -19,6 +19,9 @@ def column_duration(df: pd.DataFrame) -> pd.Series:
     if {"launched", "deadline"} - set(df.columns) != set():
         raise ValueError("`launched` and `deadline` columns not found")
 
+    if df[["launched", "deadline"]].isna().any(axis=None):
+        raise ValueError("`lauched` or `deadline` columns have NA value")
+
     duration = df.parallel_apply(
         lambda x: (
             pd.to_datetime(x.deadline).replace(tzinfo=x.launched.tzinfo)
