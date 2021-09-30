@@ -25,3 +25,6 @@ ENV PYTHONPATH=$PYTHONPATH:"/workspaces/learning_playglound/kickstartar"
 
 # prettier
 RUN npm install -g prettier
+
+# nbdimeをgitで有効化
+RUN nbdime config-git --enable --global

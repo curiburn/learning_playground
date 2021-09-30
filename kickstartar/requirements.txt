@@ -4,3 +4,6 @@ ipywidgets # sweetvizで必要って怒られたけど、前はいらなかっ�
 pandas_profiling
 pandarallel # pandasのapplyとかをマルチプロセスにするアレ
 plotly
+nose
+pycountry
+nbdime
